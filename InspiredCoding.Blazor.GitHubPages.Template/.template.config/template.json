@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Inspired Coding",
+  "classifications": [ "Web", "Blazor" ],
+  "identity": "InspiredCoding.Blazor.GitHubPages.Template",
+  "name": "Blazor Project for GitHub Pages",
+  "defaultName": "BlazorProjectForGitHubPages",
+  "shortName": "blazorpages",
+  "repository": {
+    "url": "https://github.com/inspcoding/InspiredCoding.Blazor.GitHubPages.Template",
+    "type": "GitHub"
+  },
+  "projectURL": "https://github.com/inspcoding/InspiredCoding.Blazor.GitHubPages.Template",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "InspiredCoding.Blazor.GitHubPages.Template",
+  "preferNameDirectory": true,
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net9.0",
+          "description": "Target net9.0"
+        }
+      ],
+      "replaces": "net9.0",
+      "defaultValue": "net9.0"
+    },
+    "AppTitle": {
+      "type": "parameter",
+      "defaultValue": "Your App Title",
+      "datatype": "text",
+      "replaces": "Your App Title"
+    },
+    "AppDescription": {
+      "type": "parameter",
+      "defaultValue": "Your App Description",
+      "datatype": "text",
+      "description": "Put your App Description here (try to keep it to roughly 160 characters",
+      "replaces": "Your App Description"
+    },
+    "AppKeywords": {
+      "type": "parameter",
+      "defaultValue": "Your App Keywords",
+      "datatype": "text",
+      "description": "Add 10 or so keywords here, no real impact on Google searches",
+      "replaces": "Your App Keywords"
+    }
+  },
+  "HttpsPort": {
+    "type": "parameter",
+    "datatype": "integer",
+    "description": "Port number to use for the HTTPS endpoint in launchSettings.json."
+  },
+  "HttpsPortGenerated": {
+    "type": "generated",
+    "generator": "port",
+    "parameters": {
+      "low": 44300,
+      "high": 44399
+    }
+  },
+  "HttpsPortReplacer": {
+    "type": "generated",
+    "generator": "coalesce",
+    "parameters": {
+      "sourceVariableName": "HttpsPort",
+      "fallbackVariableName": "HttpsPortGenerated"
+    },
+    "replaces": "44345"
+  }
+
+}
